@@ -1,17 +1,30 @@
-import Typography from "typography"
-import Wordpress2016 from "typography-theme-wordpress-2016"
+import Typography from "typography";
+import funstonTheme from "typography-theme-funston";
 
-Wordpress2016.overrideThemeStyles = () => {
-  return {
-    "a.gatsby-resp-image-link": {
-      boxShadow: `none`,
-    },
-  }
-}
+funstonTheme.overrideThemeStyles = ({ rhythm }, options) => ({
+  'body': {
+    'background': '#272727',
+    'color': '#747474'
+  },
+  'h1,h2,h3,h4,h5,h6': {
+    'color': '#14A76C'
+  },
+  'blockquote': {
+    'color': '#EEE2DC',
+    'border-left': '0.2625rem solid #FFE400'
+  },
+  'a': {
+    'color': '#14A76C'
+  },
+  'small': {
+    'color': '#FFE400'
+  },
+  'hr': {
+    'background': '#747474'
+  },
+});
 
-delete Wordpress2016.googleFonts
-
-const typography = new Typography(Wordpress2016)
+const typography = new Typography(funstonTheme);
 
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== `production`) {
@@ -19,5 +32,5 @@ if (process.env.NODE_ENV !== `production`) {
 }
 
 export default typography
-export const rhythm = typography.rhythm
-export const scale = typography.scale
+export const rhythm = typography.rhythm;
+export const scale = typography.scale;
