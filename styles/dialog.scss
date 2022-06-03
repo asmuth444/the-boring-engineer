@@ -1,0 +1,39 @@
+@import "mixins";
+@import "variables";
+
+.dialog {
+  @include flex(column);
+  background-color: var(--backdrop);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: 3ms;
+
+  &__main {
+    background-color: var(--primary);
+    width: 50%;
+    max-height: 40%;
+    border-radius: 1rem;
+  }
+
+  &__header {
+    @include flex(row);
+    justify-content: space-between;
+    align-items: center;
+    padding: $spacing-2 $spacing-1 $spacing-2 $spacing-4;
+    & > span {
+      @include text-size("2xl");
+      font-weight: 600;
+    }
+  }
+
+  &__main {
+    padding: $spacing-4;
+  }
+
+}

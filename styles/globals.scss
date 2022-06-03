@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "variables";
+@import "mixins";
+@import "utilities";
+@import "header";
+@import "icon-button";
+@import "home";
+@import "viewer-3d";
+@import "dialog";
+
+
+:root {
+  --primary: #{$color-white};
+  --secondary: #{$color-black};
+  --backdrop: #{$color-black-muted};
+  --accent: #{$color-green};
+}
+
+.dark {
+  --primary: #{$color-black};
+  --secondary: #{$color-white};
+  --backdrop: #{$color-white-muted};
+  --accent: #{$color-pink};
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  transition: $transition-quick;
+}
+
+body {
+  font-family: $font-main;
+  background-color: var(--primary);
+  color: var(--secondary);
+}
+
+a {
+  color: var(--secondary);
+  text-decoration: none;
+  transition: $transition-quick;
+  text-transform: uppercase;
+
+  &:hover {
+    color: var(--accent);
+    border-bottom: solid 4px var(--accent);
+  }
+}
+
+button {
+  background: none;
+  color: var(--secondary);
+  fill: var(--secondary);
+  border: none;
+  border-radius: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  transition: $transition-quick;
+
+  &:hover {
+    color: var(--accent);
+    fill: var(--accent);
+    background-color: var(--backdrop);
+  }
+}
+

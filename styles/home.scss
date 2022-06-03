@@ -1,0 +1,30 @@
+@import "variables";
+@import "mixins";
+
+.home {
+  @include flex(column);
+  justify-content: center;
+  align-items: center;
+
+  &__content {
+    position: absolute;
+    top: 40%;
+    width: 50%;
+    text-align: center;
+  }
+
+  &__message {
+    @include text-size('4xl');
+    font-family: $font-brand;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  &__description {
+    @include text-size('xl');
+  }
+
+  @include screen("sm") {
+  }
+}
+

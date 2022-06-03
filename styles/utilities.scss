@@ -1,0 +1,15 @@
+@import "mixins";
+
+.hidden {
+    @include hidden;
+    & > * {
+        @include hidden;
+    }
+}
+
+.column-center-container {
+  @include flex(column);
+  justify-content: center;
+  align-items: center;
+  padding: 12em;
+}

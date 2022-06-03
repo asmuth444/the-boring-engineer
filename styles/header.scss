@@ -1,0 +1,46 @@
+@import "mixins";
+@import "variables";
+
+.header {
+  @include flex(row);
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-4;
+  z-index: 10;
+
+  &__brand {
+    @include text-size('4xl');
+    font-family: $font-brand;
+    text-decoration: none !important;
+    color: var(--secondary) !important;
+    border-bottom: none !important;
+  }
+
+  &__menu {
+    @include flex(row);
+    align-items: center;
+    justify-content: center;
+
+    & > * {
+      padding-left: $spacing-4;
+    }
+  }
+
+  &__links {
+    @include flex(row);
+    @include text-size("lg");
+    align-items: center;
+    justify-content: center;
+    & > * {
+      margin-left: $spacing-4;
+    }
+  }
+
+  &__buttons {
+    @include flex(row);
+    align-items: center;
+    & > * {
+      margin-left: $spacing-2;
+    }
+  }
+}
